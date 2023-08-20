@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IO-Extended Demo</title>
+  </head>
+
+  <style>
+    .parent {
+      height: 500px;
+      width: 500px;
+      background-color: #EC5E4F;
+      .child {
+        height: 250px;
+        width: 250px;
+        background-color: #65B867;
+      }
+    }
+
+    .color-mix-container {
+      width: 150px;
+      .color-mix {
+        height:85px;
+        border: 1px solid black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .mix-1 {
+        background-color: color-mix(in srgb, blue, white);
+      }
+      .mix-2 {
+        background-color: color-mix(in srgb-linear, blue, white);
+      }
+      .mix-3 {
+        background-color: color-mix(in lch, blue, white);
+
+      }
+      .mix-4 {
+        background-color: color-mix(in oklch, blue, white);
+      }
+      .mix-5 {
+        background-color: color-mix(in lab, blue, white);
+      }
+      .mix-6 {
+        background-color: color-mix(in oklab, blue, white);
+      }
+      .mix-7 {
+        background-color: color-mix(in xyz, blue, white);
+    }
+  }
+
+  </style>
+
+  <body>
+    <h1>Web Dev Demos</h1>
+    <h2>Dialog</h2>
+    <dialog id="d">
+      <form>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="submit" value="Submit" />
+        <button type="button" onclick="d.close()">Cancel</button>
+      </form>
+    </dialog>
+    <button onclick="d.showModal()">Subscribe</button>
+
+    <h2>Popovers (Experimental)</h2>
+    <button popovertarget="popoverdemo">Open Popover</button>
+    <div id="popoverdemo" popover>
+        <div>
+            <h3>Popover Demo</h3>
+            <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam
+            voluptatum, quibusdam, voluptates, quia quae voluptate quos
+            exercitationem quod voluptatibus quas doloribus. Quisquam voluptatum,
+            quibusdam, voluptates, quia quae voluptate quos exercitationem quod
+            voluptatibus quas doloribus.
+            </p>
+        </div>
+    </div>
+    <br/><br/>
+    <h2>Nested CSS</h2>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+    <br/><br/>
+    <h2>Color Mix</h2>
+    <div class="color-mix-container">
+      <div class="color-mix mix-1">sRGB</div>
+      <div class="color-mix mix-2">liner-srgb</div>
+      <div class="color-mix mix-3">LCH</div>
+      <div class="color-mix mix-4">OKLCH</div>
+      <div class="color-mix mix-5">LAB</div>
+      <div class="color-mix mix-6">OKLAB</div>
+      <div class="color-mix mix-7">XYZ</div>
+    </div>
+  </body>
+</html>
